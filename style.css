@@ -1,0 +1,121 @@
+/* Configuración Base de la Web */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    
+    /* Fondo azul bonito base. Si quieres poner una imagen de fondo en el futuro, 
+       borra la línea de abajo y usa esta: background: url('tu-fondo.png') no-repeat center center fixed; background-size: cover; */
+    background: radial-gradient(circle, #0e1a30 0%, #050a12 100%);
+    
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Título de la página */
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 10px rgba(0, 225, 255, 0.4);
+}
+
+/* Cuadrícula para organizar los packs uno al lado del otro */
+.packs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tarjeta contenedora de cada pack */
+.pack-card {
+    width: 320px;
+    background-color: #0b111e;
+    border: 2px solid #1a2942;
+    /* Resplandor azul en los bordes estilo gamer */
+    box-shadow: 0px 0px 15px rgba(0, 150, 255, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto al pasar el mouse por encima del pack */
+.pack-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 25px rgba(0, 150, 255, 0.5);
+    border-color: #00a2ff;
+}
+
+/* Ajuste de la imagen del pack */
+.pack-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* La barra inferior oscura del pack (Estilo Bloxd Man) */
+.pack-bar {
+    background: linear-gradient(180deg, #090f1a 0%, #05080f 100%);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #1a2942;
+}
+
+/* Nombre del pack a la izquierda */
+.pack-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Botón de descarga COMPLETAMENTE CUADRADO a la derecha */
+.download-btn {
+    background-color: #ffffff;
+    color: #05080f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 0px; /* 0px hace que sea totalmente cuadrado */
+    letter-spacing: 1px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Efecto al pasar el mouse por el botón blanco */
+.download-btn:hover {
+    background-color: #00a2ff;
+    color: #ffffff;
+}
+
+/* Redes sociales abajo del todo */
+footer {
+    text-align: center;
+    padding: 30px;
+}
+
+.social-links a {
+    color: #00a2ff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 8px #00a2ff;
+}
