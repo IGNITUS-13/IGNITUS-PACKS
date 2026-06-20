@@ -1,9 +1,12 @@
-/* Configuración Base */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: radial-gradient(circle, #0e1a30 0%, #050a12 100%);
+    
+    /* CÓDIGO DEL FONDO DE PANTALLA: Busca tu fondo e instálalo en GitHub como fondo.png */
+    background: url('fondo.png') no-repeat center center fixed; 
+    background-size: cover;
+    
     color: white;
     min-height: 100vh;
     display: flex;
@@ -27,29 +30,22 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px; /* Más espacio entre packs */
+    gap: 40px;
     padding: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Tarjeta contenedora MÁS GRANDE y REDONDEADA */
 .pack-card {
-    width: 420px; /* Aumentado de 320px a 420px para que sea más imponente */
+    width: 420px;
     background-color: #0b111e;
-    
-    /* BORDES REDONDEADOS: Añadidos a la tarjeta principal */
     border-radius: 16px; 
     overflow: hidden;
-    
-    /* NEÓN FIJO PERSONALIZABLE: Utiliza el color asignado en el HTML. Si no hay uno, usa azul por defecto */
     border: 2px solid var(--borde-color, #00a2ff);
     box-shadow: 0px 0px 20px var(--borde-color, rgba(0, 162, 255, 0.4));
-    
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Efecto ligero de escala al pasar el cursor */
 .pack-card:hover {
     transform: scale(1.02);
     box-shadow: 0px 0px 30px var(--borde-color, #00a2ff);
@@ -63,7 +59,7 @@ header h1 {
 
 .pack-bar {
     background: linear-gradient(180deg, #090f1a 0%, #05080f 100%);
-    padding: 20px 25px; /* Más espacio interno */
+    padding: 20px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,7 +72,6 @@ header h1 {
     letter-spacing: 1px;
 }
 
-/* BOTÓN DE DESCARGA BLANCO (Mantenemos bordes redondeados suaves para el botón si lo deseas, o pon 0px si lo quieres cuadrado total) */
 .download-btn {
     background-color: #ffffff;
     color: #05080f;
@@ -84,7 +79,7 @@ header h1 {
     font-weight: bold;
     font-size: 0.9rem;
     padding: 10px 20px;
-    border-radius: 6px; /* Bordes ligeramente suaves para hacer juego */
+    border-radius: 6px;
     letter-spacing: 1px;
     transition: background-color 0.2s, color 0.2s;
 }
@@ -94,7 +89,6 @@ header h1 {
     color: #ffffff;
 }
 
-/* BOTÓN COMING SOON: Estilo gris, deshabilitado y apagado */
 .coming-soon-btn {
     background-color: #2a2f3a;
     color: #717784;
