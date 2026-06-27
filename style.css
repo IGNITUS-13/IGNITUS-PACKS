@@ -3,8 +3,8 @@ body {
     padding: 0;
     font-family: 'Arial', sans-serif;
     
-    /* CÓDIGO DEL FONDO DE PANTALLA: Busca tu fondo e instálalo en GitHub como fondo.png */
-    background: url('herobrine xd.png') no-repeat center center fixed; 
+    /* CÓDIGO DEL FONDO DE PANTALLA REPARADO CON EL ESPACIO WEB */
+    background: url('herobrine%20xd.png') no-repeat center center fixed; 
     background-size: cover;
     
     color: white;
