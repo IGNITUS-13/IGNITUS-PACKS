@@ -13,7 +13,7 @@ body {
 
 header {
     text-align: center;
-    padding: 40px 20px 0px 20px;
+    padding: 50px 20px 0px 20px;
 }
 
 header h1 {
@@ -79,27 +79,33 @@ header h1 {
     transform: scale(1.1) translateX(5px);
 }
 
-/* CONTENEDOR CENTRADO VERTICALMENTE */
+/* CONTENEDOR CENTRADO VERTICALMENTE EN LA PANTALLA */
 .packs-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    padding: 20px;
+    padding: 40px;
     max-width: 1200px;
-    margin: auto auto; /* Centrado perfecto */
+    margin: auto auto; /* Fuerza el centrado en el espacio disponible */
 }
 
-/* ANCHO FIJO DE LA TARJETA */
+/* LA TARJETA SE TRANSFORMA EN UN CUADRADO PERFECTO COMPLETO */
 .pack-card {
     width: 380px; 
+    height: 380px; /* Forzamos alto y ancho idénticos en la tarjeta */
     background-color: #0b111e;
     border-radius: 16px; 
     overflow: hidden;
     border: 2px solid var(--borde-color, #00a2ff);
     box-shadow: 0px 0px 20px var(--borde-color, rgba(0, 162, 255, 0.4));
     transition: transform 0.3s, box-shadow 0.3s;
+    
+    /* Organiza el contenido interior (imagen arriba, barra abajo) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .pack-card:hover {
@@ -107,21 +113,24 @@ header h1 {
     box-shadow: 0px 0px 30px var(--borde-color, #00a2ff);
 }
 
-/* CUADRADO PERFECTO FORZADO EN PÍXELES (380x380) */
+/* LA IMAGEN SE ADAPTA AL ESPACIO QUE QUEDA SIN DEFORMARSE */
 .pack-img {
-    width: 380px;
-    height: 380px; /* Al medir exactamente lo mismo que el ancho, es un cuadrado sí o sí */
+    width: 100%;
+    height: calc(100% - 70px); /* Ocupa todo el cuadrado menos la barra de abajo */
     object-fit: cover;
     display: block;
 }
 
+/* BARRA INFERIOR DE BOTONES */
 .pack-bar {
     background: linear-gradient(180deg, #090f1a 0%, #05080f 100%);
     padding: 15px 20px;
+    height: 70px; /* Altura fija para la barra interna */
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
 }
 
 .pack-name {
