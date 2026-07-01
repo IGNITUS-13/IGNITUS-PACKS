@@ -13,7 +13,7 @@ body {
 
 header {
     text-align: center;
-    padding: 25px 20px 10px 20px; /* Reducido espacio inferior del título */
+    padding: 25px 20px 10px 20px;
 }
 
 header h1 {
@@ -23,14 +23,13 @@ header h1 {
     font-weight: 900;
     text-transform: uppercase;
     color: #ffffff;
-    /* Doble sombra de neón estilo gaming moderno */
     text-shadow: 
         3px 3px 0px #8a2be2, 
         -3px -3px 0px #00ffff,
         0px 0px 20px rgba(255, 255, 255, 0.6);
 }
 
-/* MENÚ FIJO EN EL LATERAL IZQUIERDO CORREGIDO */
+/* MENÚ FIJO EN EL LATERAL IZQUIERDO */
 .social-sidebar {
     position: fixed;
     left: 20px;
@@ -58,7 +57,6 @@ header h1 {
     background-color: rgba(11, 17, 30, 0.85);
 }
 
-/* Colores personalizados individuales para las redes en el hover */
 .social-sidebar .link-youtube {
     border: 1px solid #ff0000;
     box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.2);
@@ -81,20 +79,19 @@ header h1 {
     transform: scale(1.1) translateX(5px);
 }
 
-/* CONTENEDOR AJUSTADO MÁS ARRIBA */
 .packs-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    padding: 10px 30px; /* Reducido acolchado vertical interno */
+    padding: 10px 30px;
     max-width: 1200px;
-    margin: 5px auto 0 auto; /* Subido drásticamente el bloque al tope */
+    margin: 5px auto 0 auto;
 }
 
-/* CUADRO MÁS GRANDE (DE 420PX A 460PX) */
+/* TARJETA MODIFICADA: MÁS ESTRECHA Y ALTA (ESTILO PORTADA) */
 .pack-card {
-    width: 460px;
+    width: 340px; /* Reducido el ancho para hacerlo estilizado */
     background-color: #0b111e;
     border-radius: 16px; 
     overflow: hidden;
@@ -104,19 +101,21 @@ header h1 {
 }
 
 .pack-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
     box-shadow: 0px 0px 30px var(--borde-color, #00a2ff);
 }
 
+/* IMAGEN ADAPTADA: RELACIÓN DE ASPECTO VERTICAL */
 .pack-img {
     width: 100%;
-    height: auto;
+    height: 380px; /* Altura fija para obligar a que sea vertical/cuadrada */
+    object-fit: cover; /* Evita que la imagen se deforme al estirarse */
     display: block;
 }
 
 .pack-bar {
     background: linear-gradient(180deg, #090f1a 0%, #05080f 100%);
-    padding: 20px 25px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -124,7 +123,7 @@ header h1 {
 }
 
 .pack-name {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -134,8 +133,8 @@ header h1 {
     color: #05080f;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9rem;
-    padding: 10px 20px;
+    font-size: 0.85rem;
+    padding: 8px 16px;
     border-radius: 6px;
     letter-spacing: 1px;
     transition: background-color 0.2s, color 0.2s;
@@ -151,8 +150,8 @@ header h1 {
     color: #717784;
     border: 1px solid #3f4451;
     font-weight: bold;
-    font-size: 0.9rem;
-    padding: 10px 20px;
+    font-size: 0.85rem;
+    padding: 8px 16px;
     border-radius: 6px;
     letter-spacing: 1px;
     cursor: not-allowed;
