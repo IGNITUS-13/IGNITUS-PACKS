@@ -13,7 +13,7 @@ body {
 
 header {
     text-align: center;
-    padding: 40px 20px 0px 20px; /* Ajustado el espacio del título */
+    padding: 40px 20px 0px 20px;
 }
 
 header h1 {
@@ -79,7 +79,7 @@ header h1 {
     transform: scale(1.1) translateX(5px);
 }
 
-/* CONTENEDOR CENTRADO VERTICALMENTE EN EL ESPACIO RESTANTE */
+/* CONTENEDOR CENTRADO VERTICALMENTE */
 .packs-container {
     display: flex;
     flex-wrap: wrap;
@@ -88,12 +88,12 @@ header h1 {
     gap: 40px;
     padding: 20px;
     max-width: 1200px;
-    margin: auto auto; /* Centrado automático perfecto abajo del header */
+    margin: auto auto; /* Centrado perfecto */
 }
 
-/* TARJETA CUADRADA PROPORCIONAL */
+/* ANCHO FIJO DE LA TARJETA */
 .pack-card {
-    width: 380px; /* Ancho cómodo para el diseño */
+    width: 380px; 
     background-color: #0b111e;
     border-radius: 16px; 
     overflow: hidden;
@@ -107,11 +107,11 @@ header h1 {
     box-shadow: 0px 0px 30px var(--borde-color, #00a2ff);
 }
 
-/* IMAGEN TOTALMENTE CUADRADA (1:1) */
+/* CUADRADO PERFECTO FORZADO EN PÍXELES (380x380) */
 .pack-img {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Obliga a la imagen a ser un cuadrado perfecto */
-    object-fit: cover; /* Muestra tu miniatura sin deformarla cuando la subas */
+    width: 380px;
+    height: 380px; /* Al medir exactamente lo mismo que el ancho, es un cuadrado sí o sí */
+    object-fit: cover;
     display: block;
 }
 
