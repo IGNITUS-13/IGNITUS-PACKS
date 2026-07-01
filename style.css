@@ -13,7 +13,7 @@ body {
 
 header {
     text-align: center;
-    padding: 25px 20px 10px 20px;
+    padding: 40px 20px 0px 20px; /* Ajustado el espacio del título */
 }
 
 header h1 {
@@ -79,19 +79,21 @@ header h1 {
     transform: scale(1.1) translateX(5px);
 }
 
+/* CONTENEDOR CENTRADO VERTICALMENTE EN EL ESPACIO RESTANTE */
 .packs-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 40px;
-    padding: 10px 30px;
+    padding: 20px;
     max-width: 1200px;
-    margin: 5px auto 0 auto;
+    margin: auto auto; /* Centrado automático perfecto abajo del header */
 }
 
-/* TARJETA MODIFICADA: MÁS ESTRECHA Y ALTA (ESTILO PORTADA) */
+/* TARJETA CUADRADA PROPORCIONAL */
 .pack-card {
-    width: 340px; /* Reducido el ancho para hacerlo estilizado */
+    width: 380px; /* Ancho cómodo para el diseño */
     background-color: #0b111e;
     border-radius: 16px; 
     overflow: hidden;
@@ -105,11 +107,11 @@ header h1 {
     box-shadow: 0px 0px 30px var(--borde-color, #00a2ff);
 }
 
-/* IMAGEN ADAPTADA: RELACIÓN DE ASPECTO VERTICAL */
+/* IMAGEN TOTALMENTE CUADRADA (1:1) */
 .pack-img {
     width: 100%;
-    height: 380px; /* Altura fija para obligar a que sea vertical/cuadrada */
-    object-fit: cover; /* Evita que la imagen se deforme al estirarse */
+    aspect-ratio: 1 / 1; /* Obliga a la imagen a ser un cuadrado perfecto */
+    object-fit: cover; /* Muestra tu miniatura sin deformarla cuando la subas */
     display: block;
 }
 
