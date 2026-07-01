@@ -29,15 +29,15 @@ header h1 {
         0px 0px 20px rgba(255, 255, 255, 0.6);
 }
 
-/* MENÚ FIJO EN EL LATERAL IZQUIERDO */
+/* MENÚ LATERAL IZQUIERDO CON BOTONES MÁS GRANDES */
 .social-sidebar {
     position: fixed;
-    left: 20px;
+    left: 25px; /* Separado un poco más del borde de la pantalla */
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* Más espacio de separación entre ambos botones */
     z-index: 9999;
 }
 
@@ -45,38 +45,38 @@ header h1 {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9rem;
-    padding: 12px 15px;
-    border-radius: 8px;
-    width: 90px;
+    font-size: 1.1rem; /* Letra más grande y visible */
+    padding: 16px 20px; /* Más espacio de relleno por dentro */
+    border-radius: 10px; /* Bordes ligeramente más redondeados */
+    width: 130px; /* Ancho ampliado de 90px a 130px */
     text-align: center;
     letter-spacing: 1px;
     display: block;
     box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    background-color: rgba(11, 17, 30, 0.85);
+    background-color: rgba(11, 17, 30, 0.9); /* Un fondo un poco más oscuro para que resalte */
 }
 
 .social-sidebar .link-youtube {
-    border: 1px solid #ff0000;
-    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.2);
+    border: 2px solid #ff0000;
+    box-shadow: 0px 0px 12px rgba(255, 0, 0, 0.3);
 }
 
 .social-sidebar .link-youtube:hover {
     background-color: #ff0000;
-    box-shadow: 0px 0px 20px #ff0000;
-    transform: scale(1.1) translateX(5px);
+    box-shadow: 0px 0px 25px #ff0000;
+    transform: scale(1.08) translateX(5px);
 }
 
 .social-sidebar .link-discord {
-    border: 1px solid #5865f2;
-    box-shadow: 0px 0px 10px rgba(88, 101, 242, 0.2);
+    border: 2px solid #5865f2;
+    box-shadow: 0px 0px 12px rgba(88, 101, 242, 0.3);
 }
 
 .social-sidebar .link-discord:hover {
     background-color: #5865f2;
-    box-shadow: 0px 0px 20px #5865f2;
-    transform: scale(1.1) translateX(5px);
+    box-shadow: 0px 0px 25px #5865f2;
+    transform: scale(1.08) translateX(5px);
 }
 
 /* CONTENEDOR CENTRADO VERTICALMENTE EN LA PANTALLA */
@@ -88,21 +88,19 @@ header h1 {
     gap: 40px;
     padding: 40px;
     max-width: 1200px;
-    margin: auto auto; /* Fuerza el centrado en el espacio disponible */
+    margin: auto auto; 
 }
 
-/* LA TARJETA SE TRANSFORMA EN UN CUADRADO PERFECTO COMPLETO */
+/* LA TARJETA EN UN CUADRADO PERFECTO COMPLETO */
 .pack-card {
     width: 380px; 
-    height: 380px; /* Forzamos alto y ancho idénticos en la tarjeta */
+    height: 380px; 
     background-color: #0b111e;
     border-radius: 16px; 
     overflow: hidden;
     border: 2px solid var(--borde-color, #00a2ff);
     box-shadow: 0px 0px 20px var(--borde-color, rgba(0, 162, 255, 0.4));
     transition: transform 0.3s, box-shadow 0.3s;
-    
-    /* Organiza el contenido interior (imagen arriba, barra abajo) */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -116,7 +114,7 @@ header h1 {
 /* LA IMAGEN SE ADAPTA AL ESPACIO QUE QUEDA SIN DEFORMARSE */
 .pack-img {
     width: 100%;
-    height: calc(100% - 70px); /* Ocupa todo el cuadrado menos la barra de abajo */
+    height: calc(100% - 70px); 
     object-fit: cover;
     display: block;
 }
@@ -125,7 +123,7 @@ header h1 {
 .pack-bar {
     background: linear-gradient(180deg, #090f1a 0%, #05080f 100%);
     padding: 15px 20px;
-    height: 70px; /* Altura fija para la barra interna */
+    height: 70px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
