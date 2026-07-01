@@ -1,4 +1,84 @@
-/* CONTEXTO 3D PARA EL CONTENEDOR */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('herobrine%20xd.png') no-repeat center center fixed; 
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 3px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    /* Doble sombra de neón estilo gaming moderno */
+    text-shadow: 
+        3px 3px 0px #8a2be2, 
+        -3px -3px 0px #00ffff,
+        0px 0px 20px rgba(255, 255, 255, 0.6);
+}
+
+/* MENÚ FIJO EN EL LATERAL IZQUIERDO */
+.social-sidebar {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.social-sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 12px 0;
+    border-radius: 8px;
+    width: 100px;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: rgba(11, 17, 30, 0.85);
+}
+
+/* Colores personalizados individuales para las redes en el hover */
+.social-sidebar .link-youtube {
+    border: 1px solid #ff0000;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.2);
+}
+
+.social-sidebar .link-youtube:hover {
+    background-color: #ff0000;
+    box-shadow: 0px 0px 20px #ff0000;
+    transform: scale(1.1) translateX(5px);
+}
+
+.social-sidebar .link-discord {
+    border: 1px solid #5865f2;
+    box-shadow: 0px 0px 10px rgba(88, 101, 242, 0.2);
+}
+
+.social-sidebar .link-discord:hover {
+    background-color: #5865f2;
+    box-shadow: 0px 0px 20px #5865f2;
+    transform: scale(1.1) translateX(5px);
+}
+
 .packs-container {
     display: flex;
     flex-wrap: wrap;
@@ -7,31 +87,44 @@
     padding: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    perspective: 1000px; /* Habilita la profundidad 3D */
 }
 
-/* EFECTO BASE DE LA TARJETA */
 .pack-card {
     width: 420px;
     background-color: #0b111e;
     border-radius: 16px; 
     overflow: hidden;
     border: 2px solid var(--borde-color, #00a2ff);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5), 0px 0px 15px var(--borde-color, rgba(0, 162, 255, 0.2));
-    
-    /* Transición suave para el efecto 3D */
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
-    transform-style: preserve-3d;
+    box-shadow: 0px 0px 20px var(--borde-color, rgba(0, 162, 255, 0.4));
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* EFECTO 3D FLOTANTE AL PASAR EL MOUSE */
 .pack-card:hover {
-    /* Eleva la tarjeta y la inclina ligeramente hacia adelante */
-    transform: translateY(-10px) rotateX(4deg) scale(1.02);
-    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.7), 0px 0px 30px var(--borde-color, #00a2ff);
+    transform: scale(1.02);
+    box-shadow: 0px 0px 30px var(--borde-color, #00a2ff);
 }
 
-/* BOTÓN DE DESCARGA CON DEGRADADO ANIMADO EN EL HOVER */
+.pack-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pack-bar {
+    background: linear-gradient(180deg, #090f1a 0%, #05080f 100%);
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pack-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
 .download-btn {
     background-color: #ffffff;
     color: #05080f;
@@ -41,25 +134,22 @@
     padding: 10px 20px;
     border-radius: 6px;
     letter-spacing: 1px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    transition: color 0.3s ease, border-color 0.3s ease;
-    border: 2px solid transparent;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-/* Animación del fondo degradado con el color de la tarjeta */
 .download-btn:hover {
+    background-color: var(--borde-color, #00a2ff);
     color: #ffffff;
-    border-color: var(--borde-color, #00a2ff);
-    background: linear-gradient(135deg, #05080f 0%, var(--borde-color, #00a2ff) 50%, #05080f 100%);
-    background-size: 200% 200%;
-    animation: brilloDegradado 2s ease infinite;
 }
 
-/* Animación para que el degradado se mueva continuamente */
-@keyframes brilloDegradado {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.coming-soon-btn {
+    background-color: #2a2f3a;
+    color: #717784;
+    border: 1px solid #3f4451;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    cursor: not-allowed;
 }
