@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ignitus Packs</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Pequeño ajuste de estilo para que los contadores queden estéticos */
+        .pack-meta-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .download-count {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 2px;
+            font-family: sans-serif;
+            letter-spacing: 0.5px;
+        }
+    </style>
 </head>
 <body>
 
@@ -27,18 +42,22 @@
                 
                 <!-- DESCRIPCIÓN Y CRÉDITOS OCULTOS QUE APARECEN CON HOVER -->
                 <div class="pack-info-overlay">
-                    <p class="pack-description">Give your game a sleek, dark twist! This pack features a vibrant purple theme with custom swords: longer, thinner, and razor-sharp for the ultimate [...]
+                    <p class="pack-description">Give your game a sleek, dark twist! This pack features a vibrant purple theme with custom swords: longer, thinner, and razor-sharp for the ultimate [...]</p>
                     <p class="pack-credits">Credits: Some textures are from Freyon. Freyon was made by @bloxdman</p>
                 </div>
             </div>
             
             <div class="pack-bar">
-                <span class="pack-name">VANTIX</span>
+                <div class="pack-meta-box">
+                    <span class="pack-name">VANTIX</span>
+                    <span id="vantix-downloads" class="download-count">Downloads: Loading...</span>
+                </div>
                 <a href="Vantix.zip" class="download-btn" download>DOWNLOAD</a>
             </div>
         </div>
         <!-- ==================== END PACK 1 ==================== -->
-<!-- ================ PACK 2: IGNITUS Shaders ================ -->
+
+        <!-- ================ PACK 2: IGNITUS Shaders ================ -->
         <div class="pack-card" style="--borde-color: #ff6600;">
             <div class="pack-content">
                 <img src="Screenshot 2026-10-15 114655.png" alt="IGNITUS Shaders" class="pack-img">
@@ -51,12 +70,48 @@
             </div>
 
             <div class="pack-bar">
-                <span class="pack-name">IGNITUS SHADERS</span>
+                <div class="pack-meta-box">
+                    <span class="pack-name">IGNITUS SHADERS</span>
+                    <span id="ignitus-downloads" class="download-count">Downloads: Loading...</span>
+                </div>
                 <a href="Shaders-bloxd-IGNITUS.zip" class="download-btn" download>DOWNLOAD</a>
             </div>
         </div>
         <!-- ================ END PACK 2 ================ -->
     </main>
 
+    <!-- SCRIPT DE API PARA EXTRAER CONTADORES DE LOS RELEASES -->
+    <script>
+      const username = "IGNITUS-13"; 
+      const repo = "IGNITUS-PACKS"; 
+
+      fetch(`https://github.com{username}/${repo}/releases`)
+        .then(response => response.json())
+        .then(data => {
+          let vantixCount = 0;
+          let ignitusCount = 0;
+
+          // Busca el conteo exacto dentro de las descargas reales guardadas por GitHub
+          data.forEach(release => {
+            release.assets.forEach(asset => {
+              if (asset.name.includes("Vantix.zip")) {
+                vantixCount += asset.download_count;
+              }
+              if (asset.name.includes("Shaders-bloxd-IGNITUS.zip")) {
+                ignitusCount += asset.download_count;
+              }
+            });
+          });
+
+          // Reemplaza el texto temporal con las métricas reales
+          document.getElementById('vantix-downloads').innerText = `Downloads: ${vantixCount}`;
+          document.getElementById('ignitus-downloads').innerText = `Downloads: ${ignitusCount}`;
+        })
+        .catch(error => {
+          console.error('Error fetching downloads:', error);
+          document.getElementById('vantix-downloads').innerText = "Downloads: N/A";
+          document.getElementById('ignitus-downloads').innerText = "Downloads: N/A";
+        });
+    </script>
 </body>
 </html>
